@@ -20,7 +20,7 @@ const CardNaranja = () => {
               <p >Ideal para exhibir en tiendas de ropa, almacenes, ferias, eventos y más, facilitando la interacción y el acceso a detalles del producto de manera rápida y eficiente.</p>
               <p className='h5'>Con sólo escanear el código QR o acercar el teléfono, tus clientes tendrán toda la información necesaria sobre tu negocio o emprendimiento en la palma de sus manos.</p>
               <hr />
-              <p className='fw-bold'>GÜEPP! Card + Exhibidor + Imprimible <br/>Precio promocional: $50000</p>
+              <p className='fw-bold'>GÜEPP! Card + Exhibidor QR/NFC + Imprimible <br/>Precio promocional: $50000</p>
                       
             </div>
           </div>
