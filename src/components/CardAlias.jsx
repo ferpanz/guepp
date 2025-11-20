@@ -1,13 +1,11 @@
 import React from 'react'
 
-const CardAlias = ({ transferencia = {}, colors = {} }) => {
+const CardAlias = ({ datos = {}, colors = {} }) => {
   const {
-    negocio = '',
-    descripcion = '',
     nombre = '',
     alias = '',
     cvu = ''
-  } = transferencia || {}
+  } = datos || {}
 
   const { cardbody = '' } = colors || {}
 
@@ -40,8 +38,7 @@ const CardAlias = ({ transferencia = {}, colors = {} }) => {
       <div className="card text-star mx-auto mb-5 ms-2 me-2">
         <div className="card-body" style={cardbody ? { backgroundColor: cardbody } : undefined}>
             <div className="text-center">
-                <h3 className="card-title">{negocio}</h3>
-                <p className="card-text">{descripcion}</p> 
+                <h5 className="card-title">Datos para transferencia</h5>
             </div>
             <div className="text-star mt-3">
                 <p className="mb-1"><strong>Nombre:</strong> {nombre}</p>

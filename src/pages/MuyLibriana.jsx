@@ -5,8 +5,9 @@ import Img2 from '../assets/guepp/foto-pasteleria.png'
 import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'
 import BtnRedes from '../components/BtnRedes'
+import Descripcion from '../components/Descripcion'
 
-const transferencia={
+const datos={
   negocio:"Muy Libriana",
   descripcion:"Aromas y producciones manuales. Equilibrio energético. Bienestar cotidiano.",
   nombre:"Daniela Aramburu",
@@ -23,7 +24,6 @@ const redes={
 const colors={
   fondo:"#cfcffcff",
   botones:"#734f96",
-  cardbody:""
 }
 
 const MuyLibriana = () => {
@@ -32,7 +32,8 @@ const MuyLibriana = () => {
       <div className="container-fluid p-5 rounded-3">
         <Carrusel images={[Img1, Img2, Img1]} />    
       </div>
-      <CardAlias transferencia={transferencia} colors={colors} />
+      <Descripcion datos={datos} />
+      <CardAlias datos={datos} colors={colors} />
       <BtnRedes redes={redes} color={colors.botones} />
     </div>
   )
