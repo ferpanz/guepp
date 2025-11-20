@@ -1,13 +1,6 @@
 import React from 'react'
 
-/**
- * BtnRedes
- * Props:
- * - redes: object with key->url
- * - color: default bootstrap color name (e.g. 'primary', 'success')
- * - colorMap: optional object mapping key->colorName or full class (e.g. { instagram: 'danger' })
- * - styleMap: optional object mapping key->inlineStyle (for custom backgrounds)
- */
+
 const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} }) => {
   const entries = Object.entries(redes || {})
   if (entries.length === 0) return null

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Guepp from "../pages/Guepp";
 import MuyLibriana from "../pages/MuyLibriana";
 import Aurora from "../pages/Aurora";
+import Ectech from "../pages/Ectech";
 
 
 export const router = createBrowserRouter([
@@ -16,5 +17,9 @@ export const router = createBrowserRouter([
     {
         path: "/aurora",
         element: <Aurora />,
+    },
+    {
+        path: "/ectech",
+        element: <Ectech />,
     }
 ]);
