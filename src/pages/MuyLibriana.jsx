@@ -23,7 +23,7 @@ const redes={
 }
 
 const colors={
-  fondo:"#239089",
+  fondo:"#b5ffff",
   botones:"#734f96",
 }
 
