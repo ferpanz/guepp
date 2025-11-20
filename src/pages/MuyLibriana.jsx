@@ -1,6 +1,7 @@
 import React from 'react'
-import Img1 from '../assets/muyLibriana/muylibriana-logo.png'
-import Img2 from '../assets/guepp/foto-pasteleria.png'
+import Img1 from '../assets/muyLibriana/logo.png'
+import Img2 from '../assets/muyLibriana/foto1.png'
+import Img3 from '../assets/muyLibriana/foto2.png'
 
 import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'
@@ -19,6 +20,8 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/muylibriana/",
   whatsapp:"https://wa.me/5493571684626",
+  tiktok:"https://www.tiktok.com/@muylibriana",
+  correo:"muylibrinana@gmail.com",
   ubicación:"https://maps.app.goo.gl/q6xsvSnWHKkbHFTE9"
 }
 
@@ -31,7 +34,7 @@ const MuyLibriana = () => {
   return (
     <div style={{ backgroundColor: colors.fondo, minHeight: '100vh' }}>
       <div className="container-fluid p-5 rounded-3">
-        <Carrusel images={[Img1, Img2, Img1]} />    
+        <Carrusel images={[Img1, Img2, Img3]} />    
       </div>
       <Descripcion datos={datos} />
       <CardAlias datos={datos} colors={colors} />
