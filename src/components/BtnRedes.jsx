@@ -34,7 +34,8 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     return 'box-arrow-up-right'
   }
 
-  const isHex = (s) => typeof s === 'string' && /^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/.test(s)
+  // Accept #RGB, #RRGGBB and #RRGGBBAA
+  const isHex = (s) => typeof s === 'string' && /^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$/.test(s)
 
   const classAndStyleFor = (key) => {
     const mapped = colorMap && colorMap[key]

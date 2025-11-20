@@ -20,14 +20,20 @@ const redes={
   ubicación:"https://maps.app.goo.gl/q6xsvSnWHKkbHFTE9"
 }
 
+const colors={
+  fondo:"#cfcffcff",
+  botones:"#734f96",
+  cardbody:""
+}
+
 const MuyLibriana = () => {
   return (
-    <div style={{ backgroundColor: '#cfcffcff', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: colors.fondo, minHeight: '100vh' }}>
       <div className="container-fluid p-5 rounded-3">
         <Carrusel images={[Img1, Img2, Img1]} />    
       </div>
-      <CardAlias transferencia={transferencia} />
-      <BtnRedes redes={redes} color="#734f96" />
+      <CardAlias transferencia={transferencia} colors={colors} />
+      <BtnRedes redes={redes} color={colors.botones} />
     </div>
   )
 }
