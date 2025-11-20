@@ -1,7 +1,7 @@
 import React from 'react'
 import Img1 from '../assets/guepp/foto-tienda-ropa.png'
 import Img2 from '../assets/guepp/foto-pasteleria.png'
-import Img3 from '../assets/guepp/foto-almacén.png'
+import Img3 from '../assets/guepp/foto-almacen.png'
 import Carrusel from '../subcomponents/Carrusel'
 
 const CardNaranja = () => {
