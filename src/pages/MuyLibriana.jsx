@@ -6,6 +6,7 @@ import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'
 import BtnRedes from '../components/BtnRedes'
 import Descripcion from '../components/Descripcion'
+import Footer from '../components/Footer'
 
 const datos={
   negocio:"Muy Libriana",
@@ -35,6 +36,7 @@ const MuyLibriana = () => {
       <Descripcion datos={datos} />
       <CardAlias datos={datos} colors={colors} />
       <BtnRedes redes={redes} color={colors.botones} />
+      <Footer />
     </div>
   )
 }
