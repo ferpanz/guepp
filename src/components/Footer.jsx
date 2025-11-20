@@ -5,7 +5,7 @@ import logo from '../assets/guepp/Logo-sin-fondo.png'
 
 const Footer = () => {
   return (
-    <footer className="position-fixed bottom-0 start-0 w-100 pb-5">
+    <footer className="position-fixed bottom-0 start-0 w-100 mb-5">
       <Link to="/" aria-label="Ir a Guepp" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div className="container text-center rounded-3">
           <hr className="w-100" />
