@@ -1,5 +1,6 @@
 import React from 'react'
 import Img1 from '../assets/muyLibriana/muylibriana-logo.png'
+import Img2 from '../assets/guepp/foto-pasteleria.png'
 
 import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'
@@ -21,13 +22,13 @@ const redes={
 
 const MuyLibriana = () => {
   return (
-    <>
+    <div style={{ backgroundColor: '#cfcffcff', minHeight: '100vh' }}>
       <div className="container-fluid p-5 rounded-3">
-        <Carrusel images={[Img1, Img1, Img1]} />    
+        <Carrusel images={[Img1, Img2, Img1]} />    
       </div>
       <CardAlias transferencia={transferencia} />
       <BtnRedes redes={redes} color="#734f96" />
-    </>
+    </div>
   )
 }
 
