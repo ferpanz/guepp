@@ -3,6 +3,7 @@ import Guepp from "../pages/Guepp";
 import MuyLibriana from "../pages/MuyLibriana";
 import Aurora from "../pages/Aurora";
 import Ectech from "../pages/Ectech";
+import YamilGomez from "../pages/YamilGomez";
 
 
 export const router = createBrowserRouter([
@@ -21,5 +22,9 @@ export const router = createBrowserRouter([
     {
         path: "/ectech",
         element: <Ectech />,
+    },
+    {
+        path: "/yamilgomez",
+        element: <YamilGomez />,
     }
 ]);

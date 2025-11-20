@@ -35,7 +35,7 @@ const MuyLibriana = () => {
       <div className="container-fluid p-5 rounded-3">
         <Carrusel images={[Img1, Img2, Img3]} />    
       </div>
-      <Descripcion datos={datos} />
+      <Descripcion datos={datos} colors={colors} />
       <CardAlias datos={datos} colors={colors} />
       <BtnRedes redes={redes} color={colors.botones} />
       <Footer />
