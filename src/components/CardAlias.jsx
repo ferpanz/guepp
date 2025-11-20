@@ -35,17 +35,24 @@ const CardAlias = ({ transferencia = {} }) => {
 
   return (
     <>
-      <div className="card text-end w-75 mx-auto mb-5">
+      <div className="card text-star mx-auto mb-5 ms-2 me-2">
         <div className="card-body">
-          <h5 className="card-title">{negocio}</h5>
-          <p className="card-text">{descripcion}</p>
-
-          <p className="mb-1"><strong>Nombre:</strong> {nombre}</p>
-          <p className="mb-1"><strong>CVU:</strong> {cvu}</p>
-          <p className="mb-3"><strong>Alias:</strong> {alias}</p>
-
-          <button onClick={copyAlias} className="btn btn-primary">Copiar alias</button>
+            <div className="text-center">
+                <h3 className="card-title">{negocio}</h3>
+                <p className="card-text">{descripcion}</p> 
+            </div>
+            <div className="text-star mt-3">
+                <p className="mb-1"><strong>Nombre:</strong> {nombre}</p>
+                <p className="mb-1"><strong>CVU:</strong> {cvu}</p>
+                <p className="mb-3"><strong>Alias:</strong> {alias}</p>
+            </div>
+            <div className="text-end">
+                <button onClick={copyAlias} className="btn btn-primary">Copiar alias</button>
+            </div>
+          
         </div>
+            
+        
       </div>
     </>
   )
