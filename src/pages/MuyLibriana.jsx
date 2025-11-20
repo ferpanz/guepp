@@ -3,6 +3,7 @@ import Img1 from '../assets/muyLibriana/muylibriana-logo.png'
 
 import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'
+import BtnRedes from '../components/BtnRedes'
 
 const transferencia={
   negocio:"Muy Libriana",
@@ -21,10 +22,11 @@ const redes={
 const MuyLibriana = () => {
   return (
     <>
-      <div className="container-fluid p-5 rounded-3 bg-naranja mb-3">
+      <div className="container-fluid p-5 rounded-3">
         <Carrusel images={[Img1, Img1, Img1]} />    
       </div>
-        <CardAlias transferencia={transferencia} />
+      <CardAlias transferencia={transferencia} />
+      <BtnRedes redes={redes} />
     </>
   )
 }

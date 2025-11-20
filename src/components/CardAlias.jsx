@@ -49,10 +49,7 @@ const CardAlias = ({ transferencia = {} }) => {
             <div className="text-end">
                 <button onClick={copyAlias} className="btn btn-primary">Copiar alias</button>
             </div>
-          
         </div>
-            
-        
       </div>
     </>
   )
