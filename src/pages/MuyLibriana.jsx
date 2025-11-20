@@ -26,7 +26,7 @@ const MuyLibriana = () => {
         <Carrusel images={[Img1, Img1, Img1]} />    
       </div>
       <CardAlias transferencia={transferencia} />
-      <BtnRedes redes={redes} />
+      <BtnRedes redes={redes} color="#734f96" />
     </>
   )
 }
