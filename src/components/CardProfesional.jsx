@@ -12,7 +12,7 @@ const CardProfesional = () => {
             </div>
             <div className="col-12 col-md-6 ps-md-5 mx-auto my-auto pt-3">
               <h2 className='fw-bold'>GÜEPP! Profesionales</h2>
-              <p >Con GÜEPP! CARD tenés una aplicación dar a conocer y potenciar tu perfil profesional, fidelizar tus clientes y conectar con tus potenciales clientes.</p>
+              <p >Con GÜEPP! CARD tenés una aplicación para dar a conocer y potenciar tu perfil profesional, fidelizar tus clientes y conectar con tus potenciales clientes.</p>
               <p className='h5'>Linkeá tus redes sociales, medios de contacto y más.</p>
               <hr />
               <p className='fw-bold'>GÜEPP! CARD + QR Imprimible <br/>Precio promocional: $35000</p>
