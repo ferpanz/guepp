@@ -14,6 +14,10 @@ const Guepp = () => {
       <CardProfesional />
       
       <BtnInfo />
+      <footer className='container text-center mt-5 mb-5 '>
+        <hr />
+        <a className='link-opacity-100' href="https://ferpanz.github.io/" target='_blanck'>by Fernán Barberón</a>
+      </footer>
     </>
   )
 }
