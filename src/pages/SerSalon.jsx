@@ -20,7 +20,7 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/ser_saloneventos/",
   whatsapp:"https://wa.me/5493571323312",
-  correo:"ser25r3@gmail.com",
+  correo:"mailto:ser25r3@gmail.com",
   ubicación:"https://maps.app.goo.gl/W8YawAjpVkqezUbM6?g_st=aw",
 }
 

@@ -20,7 +20,7 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/muylibriana/",
   whatsapp:"https://wa.me/5493571684626",
-  correo:"aramburu1998@gmail.com",
+  correo:"mailto:aramburu1998@gmail.com",
   ubicación:"https://maps.app.goo.gl/q6xsvSnWHKkbHFTE9"
 }
 
