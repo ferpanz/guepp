@@ -11,6 +11,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'whatsapp') return 'WhatsApp'
     if (lower === 'instagram') return 'Instagram'
     if (lower === 'ubicación' || lower === 'ubicacion') return 'Ubicación'
+    if (lower === 'link') return 'Link'
     return k.charAt(0).toUpperCase() + k.slice(1)
   }
 
