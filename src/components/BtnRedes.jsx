@@ -52,7 +52,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     // Fallback to page-level color
     if (isHex(color)) {
       const style = { ...(inlineFromMap || {}), background: color, border: 'none', color: '#fff' }
-      return { className: 'btn', style }
+      return { className: 'btn shadow mb-2', style }
     }
 
     return { className: `btn btn-${color}`, style: inlineFromMap }
