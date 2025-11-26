@@ -60,14 +60,20 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
 
   return (
     <>
-      <div className="d-grid gap-2 col-11 mx-auto">
+      <div className="d-grid gap-2 col-11 col-md-5 mx-auto">
         {entries.map(([key, url]) => {
           const { className, style } = classAndStyleFor(key)
           const icon = iconFromKey(key)
+          const lowerKey = (key || '').toLowerCase()
+          let href = url
+          // Si la clave es correo/email, asegurar el prefijo mailto:
+          if ((lowerKey === 'correo' || lowerKey === 'email') && typeof url === 'string') {
+            href = url.startsWith('mailto:') ? url : `mailto:${url}`
+          }
           return (
             <a
               key={key}
-              href={url}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
               className={className}

@@ -35,19 +35,23 @@ const CardAlias = ({ datos = {}, colors = {} }) => {
 
   return (
     <>
-      <div className="card text-star mx-auto mb-5 ms-2 me-2">
-        <div className="card-body" style={cardbody ? { backgroundColor: cardbody } : undefined}>
-            <div className="text-center">
-                <h5 className="card-title">Datos para transferencia</h5>
+      <div className="row justify-content-center">
+        <div className="col-12 col-lg-6">
+          <div className="card text-star mx-auto mb-5 ms-2 me-2">
+            <div className="card-body" style={cardbody ? { backgroundColor: cardbody } : undefined}>
+                <div className="text-center">
+                    <h5 className="card-title">Datos para transferencia</h5>
+                </div>
+                <div className="text-star mt-3">
+                    <p className="mb-1"><strong>Nombre:</strong> {nombre}</p>
+                    <p className="mb-1"><strong>CVU:</strong> {cvu}</p>
+                    <p className="mb-3"><strong>Alias:</strong> {alias}</p>
+                </div>
+                <div className="text-end">
+                    <button onClick={copyAlias} className="btn btn-primary">Copiar alias</button>
+                </div>
             </div>
-            <div className="text-star mt-3">
-                <p className="mb-1"><strong>Nombre:</strong> {nombre}</p>
-                <p className="mb-1"><strong>CVU:</strong> {cvu}</p>
-                <p className="mb-3"><strong>Alias:</strong> {alias}</p>
-            </div>
-            <div className="text-end">
-                <button onClick={copyAlias} className="btn btn-primary">Copiar alias</button>
-            </div>
+          </div>
         </div>
       </div>
     </>
