@@ -27,6 +27,7 @@ const redes={
 const colors={
   fondo:"#b5ffff",
   botones:"#734f96",
+  cardbody:"#e0d4f7"
 }
 
 const MuyLibriana = () => {

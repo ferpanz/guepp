@@ -14,8 +14,8 @@ const Carrusel = ({ images = [], id }) => {
           y limitan el ancho en pantallas más grandes para que no ocupe toda la pantalla */}
       <style>{`
         .carrusel-responsive{ width:100%; max-width:420px; margin:0 auto; }
-        @media (min-width: 768px){ .carrusel-responsive{ max-width:520px; } }
-        @media (min-width: 1200px){ .carrusel-responsive{ max-width:640px; } }
+        @media (min-width: 768px){ .carrusel-responsive{ max-width:420px; } }
+        @media (min-width: 1200px){ .carrusel-responsive{ max-width:420px; } }
         .carrusel-responsive .carousel-item img{ object-fit:contain; height:auto; }
       `}</style>
 
@@ -25,7 +25,7 @@ const Carrusel = ({ images = [], id }) => {
             <div
               key={idx}
               className={`carousel-item ${idx === 0 ? 'active' : ''}`}
-              data-bs-interval={idx === 0 ? 5000 : 2000}
+              data-bs-interval={idx === 0 ? 1500 : 2000}
             >
               <img src={src} className="d-block w-100" alt={`slide-${idx}`} />
             </div>
