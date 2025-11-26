@@ -12,9 +12,9 @@ import Footer from '../components/Footer'
 const datos={
   negocio:"S.E.R. Salón de Eventos",
   descripcion:"Salón de Eventos multiespacio. Ideal para cumpleaños, fiestas, reuniones, eventos familiares y coorporativos, peñas...",
-  nombre:"",
-  alias:"",
-  cvu:""  
+  nombre:'',
+  alias:'',
+  cvu:''  
 }
 
 const redes={
@@ -27,6 +27,8 @@ const redes={
 const colors={
   fondo:"#fffae7",
   botones:"#18413d",
+  cardbody:"#f0e8d4",
+  text:"#18413d"
 }
 
 const SerSalon = () => {
@@ -35,7 +37,7 @@ const SerSalon = () => {
       <div className="container-fluid p-5 rounded-3">
         <Carrusel images={[Img1, Img2, Img3]} />    
       </div>
-      <Descripcion datos={datos} />
+      <Descripcion datos={datos} colors={colors} />
       
       <BtnRedes redes={redes} color={colors.botones} />
       <Footer />

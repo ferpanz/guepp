@@ -26,6 +26,7 @@ const redes={
 const colors={
   fondo:"#9595a3ff",
   botones:"#1e5686ff",
+  text:"#ffffff"
 }
 
 const YamilGomez = () => {
@@ -34,7 +35,7 @@ const YamilGomez = () => {
       <div className="container-fluid p-5 rounded-3">
         <Carrusel images={[Img1, Img2, Img3]} />    
       </div>
-      <Descripcion datos={datos} />
+      <Descripcion datos={datos} colors={colors} />
       
       <BtnRedes redes={redes} color={colors.botones} />
       <Footer />

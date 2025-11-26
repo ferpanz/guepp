@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Guepp from "../pages/Guepp";
 import MuyLibriana from "../pages/MuyLibriana";
-import Aurora from "../pages/Aurora";
 import YamilGomez from "../pages/YamilGomez";
 import SerSalon from "../pages/SerSalon";
+import GueppCard from "../pages/GueppCard";
 
 
 export const router = createBrowserRouter([
@@ -16,8 +16,8 @@ export const router = createBrowserRouter([
         element: <MuyLibriana />,
     },
     {
-        path: "/aurora",
-        element: <Aurora />,
+        path: "/guepp-card",
+        element: <GueppCard />,
     },
     {
         path: "/ser-salon",

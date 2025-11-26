@@ -35,8 +35,8 @@ const CardAlias = ({ datos = {}, colors = {} }) => {
 
   return (
     <>
-      <div className="row justify-content-center">
-        <div className="col-12 col-lg-5" >
+      <div className="row justify-content-center mt-4">
+        <div className="col-12 col-md-5" >
           <div className="card text-star mx-auto mb-5 ms-2 me-2">
             <div className="card-body" style={cardbody ? { backgroundColor: cardbody } : undefined}>
                 <div className="text-center">
