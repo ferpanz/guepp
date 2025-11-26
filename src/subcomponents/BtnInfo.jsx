@@ -12,7 +12,7 @@ const BtnInfo = () => {
   return (
     <div className="d-grid gap-2 col-6 mx-auto mt-1 mb-4">
       <button
-        className="btn btn-success"
+        className="btn btn-success shadow"
         type="button"
         onClick={handleClick}
         
