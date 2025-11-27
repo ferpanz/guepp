@@ -14,9 +14,9 @@ const CardList = () => {
             <ul class="list-group list-group-flush">
               <li class="list-group-item fw-semibold">Simple, sencillo, sin enredos</li>
               <li class="list-group-item fw-semibold">Facilita el acceso a la info necesaria</li>
-              <li class="list-group-item fw-semibold">Asegura que tus clientes lleguen a tus redes sociales</li>
+              <li class="list-group-item fw-semibold">Conecta a tus clientes con tus redes</li>
               <li class="list-group-item fw-semibold">Ofrece todos tus medios de contacto en un paso</li>
-              <li class="list-group-item fw-semibold">Agiliza transferencias copiando directamente el alias</li>
+              <li class="list-group-item fw-semibold">Agiliza transferencias</li>
               <li class="list-group-item fw-semibold">Realza tu negocio y lo visibiliza</li>
               <li class="list-group-item fw-semibold">Potencia tu perfil profesional</li>
               <li class="list-group-item fw-semibold">Link para compartir en tus redes</li>

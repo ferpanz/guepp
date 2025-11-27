@@ -18,9 +18,9 @@ const datos={
 }
 
 const redes={
-  instagram:"https://www.instagram.com/fernanbarberon1/",
+  instagram:"https://www.instagram.com/guepp_desarrolloweb/",
   tiktok:"https://www.tiktok.com/@fernanbarberon",
-  whatsapp:"https://wa.me/5493571684626",
+  whatsapp:"https://wa.me/5493571458866",
   correo:"mailto:ferpanz@gmail.com",
   link:"https://guepp.com.ar/"
 }
