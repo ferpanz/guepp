@@ -22,7 +22,8 @@ const redes={
   tiktok:"https://www.tiktok.com/@fernanbarberon",
   whatsapp:"https://wa.me/5493571458866",
   correo:"mailto:ferpanz@gmail.com",
-  link:"https://guepp.com.ar/"
+  web:"https://guepp.com.ar/",
+  ubicacion:"https://maps.app.goo.gl/wUhW8Tu1s4cKK6Hu6"
 }
 
 const colors={
