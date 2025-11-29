@@ -11,6 +11,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'whatsapp') return 'WhatsApp'
     if (lower === 'instagram') return 'Instagram'
     if (lower === 'ubicación' || lower === 'ubicacion') return 'Ubicación'
+    if (lower === 'telefono' || lower === 'teléfono' || lower === 'phone' || lower === 'llamada' || lower === 'tel') return 'Teléfono'
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'Página Web'
     if (lower === 'link') return 'Link'
     return k.charAt(0).toUpperCase() + k.slice(1)
@@ -24,6 +25,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'facebook') return 'facebook'
     if (lower === 'twitter') return 'twitter'
     if (lower === 'tiktok') return 'tiktok'
+    if (lower === 'telefono' || lower === 'teléfono' || lower === 'phone' || lower === 'llamada' || lower === 'tel') return 'telephone'
     if (lower === 'ubicación' || lower === 'ubicacion' || lower === 'maps') return 'geo-alt'
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'globe'
     if (lower === 'email' || lower === 'correo') return 'envelope'

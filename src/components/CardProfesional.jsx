@@ -15,7 +15,7 @@ const CardProfesional = () => {
               <p >Con GÜEPP! CARD tenés una aplicación para dar a conocer y potenciar tu perfil profesional, fidelizar tus clientes y conectar con tus potenciales clientes.</p>
               <p className='h5'>Linkeá para compartir todo desde tu Instagram, TikTok, Twitter, YouTube y otros perfiles de redes sociales.</p>
               <hr />
-              <p className='fw-bold'>GÜEPP! CARD + QR Imprimible <br/>Precio promocional: $35000</p>
+              <p className='fw-bold'>GÜEPP! CARD + QR Imprimible</p>
             </div>
           </div>
       </div>
