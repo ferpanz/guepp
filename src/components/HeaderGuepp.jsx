@@ -8,7 +8,7 @@ const HeaderGuepp = () => {
         <img
           src={Logo}
           alt="Logo GÜEPP!"
-          className="img-fluid w-50 w-md-50" 
+          className="img-fluid w-50 w-md-25" 
         />
       </div> 
     </>
