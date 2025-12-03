@@ -5,6 +5,7 @@ import YamilGomez from "../pages/YamilGomez";
 import SerSalon from "../pages/SerSalon";
 import GueppCard from "../pages/GueppCard";
 import InspeccionRio3Cala1 from "../pages/InspeccionRio3Cala1";
+import ClaudiaSchiaverano from "../pages/ClauidaSchiaverano";
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
     {
         path: "/inspeccionrio3cala1",
         element: <InspeccionRio3Cala1 />,
+    },
+    {
+        path: "/claudiaschiaverano",
+        element: <ClaudiaSchiaverano />,
     },
     {
         path: "/yamilgomez",
