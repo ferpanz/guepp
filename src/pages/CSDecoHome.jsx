@@ -10,7 +10,7 @@ import Descripcion from '../components/Descripcion'
 import Footer from '../components/Footer'
 
 const datos={
-  negocio:"CS - DECO&HOME",
+  negocio:"DECO&HOME - CS",
   descripcion:"Decoración de interiores, asesoramiento en diseño y ambientación de espacios. Objetos decorativos y textiles para el hogar. Transformá tu espacio con estilo y funcionalidad.",
   nombre:"",
   alias:"",
@@ -20,7 +20,7 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/decohome.cs/",
   whatsapp:"https://wa.me/5493571310061",
-  ubicacion:"https://maps.app.goo.gl/mrrSsaX5HdT5MjZDA"
+  ubicacion:"https://maps.app.goo.gl/SHpMC6qASqBDhzF69"
 }
 
 const colors={
