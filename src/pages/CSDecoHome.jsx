@@ -1,7 +1,7 @@
 import React from 'react'
-import Img1 from '../assets/claudiaschiaverano/logo.png'
-import Img2 from '../assets/claudiaschiaverano/foto1.png'
-import Img3 from '../assets/claudiaschiaverano/foto2.png'
+import Img1 from '../assets/cs-decohome/logo.png'
+import Img2 from '../assets/cs-decohome/foto1.png'
+import Img3 from '../assets/cs-decohome/foto2.png'
 
 import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'
@@ -30,7 +30,7 @@ const colors={
   text:"#5e118fff"
 }
 
-const ClaudiaSchaverano = () => {
+const CSDecoHome = () => {
   return (
     <div style={{ backgroundColor: colors.fondo, minHeight: '100vh' }}>
       <div className="container-fluid p-5 rounded-3">
@@ -45,4 +45,4 @@ const ClaudiaSchaverano = () => {
   )
 }
 
-export default ClaudiaSchaverano
+export default CSDecoHome

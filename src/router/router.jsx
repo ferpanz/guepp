@@ -5,7 +5,7 @@ import YamilGomez from "../pages/YamilGomez";
 import SerSalon from "../pages/SerSalon";
 import GueppCard from "../pages/GueppCard";
 import InspeccionRio3Cala1 from "../pages/InspeccionRio3Cala1";
-import ClaudiaSchiaverano from "../pages/ClauidaSchiaverano";
+import CSDecoHome from "../pages/CSDecoHome";
 
 
 export const router = createBrowserRouter([
@@ -30,8 +30,8 @@ export const router = createBrowserRouter([
         element: <InspeccionRio3Cala1 />,
     },
     {
-        path: "/claudiaschiaverano",
-        element: <ClaudiaSchiaverano />,
+        path: "/cs-decohome",
+        element: <CSDecoHome />,
     },
     {
         path: "/yamilgomez",
