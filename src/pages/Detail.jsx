@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 
 const datos={
   negocio:"DETAIL JG",
-  descripcion:"Productos de limpieza TOXIC SHINE, la marca número 1 en Argentian brindando el mejor cuidado para tu vehículo. Contamos con una amplia gama de productos para el cuidado y mantenimiento de autos, motos y camionetas. ¡Dale a tu vehículo el detalle que se merece con DETAIL JG!",
+  descripcion:"Productos de limpieza TOXIC SHINE, la marca N°1 en Argentina brindando el mejor cuidado para tu vehículo. Contamos con una amplia gama de productos para el cuidado y mantenimiento de autos, motos y camionetas. ¡Dale a tu vehículo el detalle que se merece con DETAIL JG!",
   nombre:"Jonathan Emanuel Gomez",
   alias:"alvaro.gomez6",
   cvu:"0000003100046570651240"  
