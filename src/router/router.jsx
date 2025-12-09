@@ -6,6 +6,7 @@ import SerSalon from "../pages/SerSalon";
 import GueppCard from "../pages/GueppCard";
 import InspeccionRio3Cala1 from "../pages/InspeccionRio3Cala1";
 import CSDecoHome from "../pages/CSDecoHome";
+import Detail from "../pages/Detail";
 
 
 export const router = createBrowserRouter([
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
     {
         path: "/cs-decohome",
         element: <CSDecoHome />,
+    },
+    {
+        path: "/detail-jg",
+        element: <Detail />,
     },
     {
         path: "/yamilgomez",
