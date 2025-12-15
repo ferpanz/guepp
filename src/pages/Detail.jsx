@@ -20,7 +20,7 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/detailjg_rio3",
   whatsapp:"https://wa.me/5493571361641",
-  ubicacion:"https://maps.app.goo.gl/i4bx9r2oiPiGrPgH7"
+  ubicacion:"https://maps.app.goo.gl/Zohx3eAnH8Q2mEXS6"
 }
 
 const colors={
