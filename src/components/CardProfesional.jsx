@@ -1,14 +1,12 @@
 import React from 'react'
-import video from '../assets/guepp/videito-prof.webm'
-import Carrusel from '../subcomponents/Carrusel'
-
+import profesional from '../assets/guepp/profesional.png'
 const CardProfesional = () => {
   return (
     <>
       <div className="container p-5 rounded-3 mb-3 bg-turqueza">
           <div className="row">
             <div className="col-12 col-md-6 my-auto mx-auto text-center">
-              <video className='img-fluid rounded w-50' src={video} autoPlay loop />
+              <img className='img-fluid rounded w-50' src={profesional} />
             </div>
             <div className="col-12 col-md-6 ps-md-5 mx-auto my-auto pt-3">
               <h2 className='fw-bold'>GÜEPP! Profesionales</h2>

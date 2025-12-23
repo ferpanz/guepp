@@ -1,5 +1,5 @@
 import React from 'react'
-import video from '../assets/guepp/videito.webm'
+import emprendimiento from '../assets/guepp/emprendimiento.png'
 
 const CardList = () => {
   return (
@@ -7,7 +7,7 @@ const CardList = () => {
       <div className="container p-5 rounded-3 mb-3">
         <div className="row">
           <div className="col-12 col-md-6 my-auto mx-auto text-center order-md-1">
-            <video className='img-fluid rounded w-50' src={video} autoPlay loop />
+            <img className='img-fluid rounded w-50' src={emprendimiento}/>
           </div>
           <div className="col-12 col-md-6 ps-md-5 mx-auto my-auto pt-3 order-md-0">
             <h2 className='fw-bold'>GÜEPP! CARD</h2>

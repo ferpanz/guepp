@@ -12,9 +12,9 @@ import Footer from '../components/Footer'
 const datos={
   negocio:"S.E.R. Salón de Eventos",
   descripcion:"Salón de Eventos multiespacio. Ideal para cumpleaños, fiestas, reuniones, eventos familiares y coorporativos, peñas...",
-  nombre:'',
-  alias:'',
-  cvu:''  
+  nombre:'Rodrigo Jesús López',
+  alias:'serlopez25',
+  cvu:'0000003100052332809354'  
 }
 
 const redes={
@@ -40,6 +40,7 @@ const SerSalon = () => {
       <Descripcion datos={datos} colors={colors} />
       
       <BtnRedes redes={redes} color={colors.botones} />
+      <CardAlias datos={datos} colors={colors} />
       <Footer />
     </div>
   )
