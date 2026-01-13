@@ -1,6 +1,6 @@
 import React from 'react'
-import Img1 from '../assets/yamilgomez/perfil1.png'
-import Img2 from '../assets/yamilgomez/logo.png'
+import Img1 from '../assets/yamilgomez/logo.png'
+import Img2 from '../assets/yamilgomez/perfil1.png'
 import Img3 from '../assets/yamilgomez/perfil2.png'
 
 import Carrusel from '../subcomponents/Carrusel'
