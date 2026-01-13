@@ -20,6 +20,7 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/yamil.ph/",
   whatsapp:"https://wa.me/5493571549323",
+  portfolio:"https://drive.google.com/drive/folders/1Hsl5z4Lpx84Wlu4V9VyJPzz5Yb-2YVp7?usp=sharing",
   ubicación:"https://maps.app.goo.gl/q6xsvSnWHKkbHFTE9",
 }
 
