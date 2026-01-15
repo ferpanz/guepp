@@ -7,6 +7,7 @@ import GueppCard from "../pages/GueppCard";
 import InspeccionRio3Cala1 from "../pages/InspeccionRio3Cala1";
 import CSDecoHome from "../pages/CSDecoHome";
 import Detail from "../pages/Detail";
+import Onix from "../pages/Onix";
 
 
 export const router = createBrowserRouter([
@@ -41,5 +42,9 @@ export const router = createBrowserRouter([
     {
         path: "/yamilgomez",
         element: <YamilGomez />,
+    },
+    {
+        path: "/onix",
+        element: <Onix />,
     }
 ]);
