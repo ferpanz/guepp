@@ -1,7 +1,7 @@
 import React from 'react'
 import Img1 from '../assets/onix/logo.png'
 import Img2 from '../assets/onix/foto1.png'
-import Img3 from '../assets/onix/logo.png'
+import Img3 from '../assets/onix/foto2.png'
 
 import Carrusel from '../subcomponents/Carrusel'
 import CardAlias from '../components/CardAlias'

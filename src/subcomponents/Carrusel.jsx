@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 // Reusable carousel component. Props:
 // - images: array of image src strings
 // - id: optional id string for the carousel (auto-generated if omitted)
 const Carrusel = ({ images = [], id }) => {
   const carouselId = id || `carousel-${Math.random().toString(36).slice(2,9)}`
+  const carouselRef = useRef(null)
+
+  useEffect(() => {
+    if (carouselRef.current && typeof window !== 'undefined') {
+      try {
+        // Inicializa el carrusel con Bootstrap
+        const carousel = new window.bootstrap.Carousel(carouselRef.current, {
+          interval: 1500,
+          wrap: true,
+          keyboard: true,
+          pause: 'hover',
+          touch: true,
+        })
+        // Reinicia el autoplay después de cambio de slide
+        carouselRef.current.addEventListener('slid.bs.carousel', () => {
+          carousel.cycle()
+        })
+      } catch (error) {
+        console.error('Error inicializando carrusel:', error)
+      }
+    }
+  }, [])
 
   if (!images || images.length === 0) return null
 
@@ -19,13 +41,12 @@ const Carrusel = ({ images = [], id }) => {
         .carrusel-responsive .carousel-item img{ object-fit:contain; height:auto; }
       `}</style>
 
-      <div id={carouselId} className="carousel slide" data-bs-ride="carousel">
+      <div id={carouselId} ref={carouselRef} className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           {images.map((src, idx) => (
             <div
               key={idx}
               className={`carousel-item ${idx === 0 ? 'active' : ''}`}
-              data-bs-interval={idx === 0 ? 1500 : 2000}
             >
               <img src={src} className="d-block w-100" alt={`slide-${idx}`} />
             </div>
