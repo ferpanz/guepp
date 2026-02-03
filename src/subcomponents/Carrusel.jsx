@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 // Reusable carousel component. Props:
 // - images: array of image src strings
@@ -6,27 +6,88 @@ import React, { useEffect, useRef } from 'react'
 const Carrusel = ({ images = [], id }) => {
   const carouselId = id || `carousel-${Math.random().toString(36).slice(2,9)}`
   const carouselRef = useRef(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const autoplayRef = useRef(null)
+  const isHoveringRef = useRef(false)
 
   useEffect(() => {
-    if (carouselRef.current && typeof window !== 'undefined') {
-      try {
-        // Inicializa el carrusel con Bootstrap
-        const carousel = new window.bootstrap.Carousel(carouselRef.current, {
-          interval: 1500,
-          wrap: true,
-          keyboard: true,
-          pause: 'hover',
-          touch: true,
-        })
-        // Reinicia el autoplay después de cambio de slide
-        carouselRef.current.addEventListener('slid.bs.carousel', () => {
-          carousel.cycle()
-        })
-      } catch (error) {
-        console.error('Error inicializando carrusel:', error)
+    if (!carouselRef.current || images.length <= 1) return
+
+    // Función para avanzar al siguiente slide
+    const nextSlide = () => {
+      setCurrentSlide((prev) => (prev + 1) % images.length)
+    }
+
+    // Inicia el autoplay
+    const startAutoplay = () => {
+      if (!isHoveringRef.current) {
+        autoplayRef.current = setTimeout(nextSlide, 2000)
       }
     }
-  }, [])
+
+    // Detiene el autoplay
+    const stopAutoplay = () => {
+      if (autoplayRef.current) {
+        clearTimeout(autoplayRef.current)
+      }
+    }
+
+    // Reinicia el autoplay
+    startAutoplay()
+
+    // Event listeners
+    const carousel = carouselRef.current
+    carousel?.addEventListener('mouseenter', () => {
+      isHoveringRef.current = true
+      stopAutoplay()
+    })
+    carousel?.addEventListener('mouseleave', () => {
+      isHoveringRef.current = false
+      startAutoplay()
+    })
+    carousel?.addEventListener('touchstart', () => {
+      isHoveringRef.current = true
+      stopAutoplay()
+    })
+    carousel?.addEventListener('touchend', () => {
+      isHoveringRef.current = false
+      startAutoplay()
+    })
+
+    // Intenta también inicializar Bootstrap si está disponible
+    if (typeof window !== 'undefined' && window.bootstrap) {
+      try {
+        new window.bootstrap.Carousel(carousel, {
+          interval: false, // Desactiva autoplay de Bootstrap
+          wrap: true,
+          keyboard: true,
+          pause: false,
+          touch: true,
+        })
+      } catch (error) {
+        console.error('Error inicializando Bootstrap Carousel:', error)
+      }
+    }
+
+    return () => {
+      stopAutoplay()
+      carousel?.removeEventListener('mouseenter', () => {})
+      carousel?.removeEventListener('mouseleave', () => {})
+      carousel?.removeEventListener('touchstart', () => {})
+      carousel?.removeEventListener('touchend', () => {})
+    }
+  }, [images.length])
+
+  // Efecto adicional para manejar el autoplay continuo
+  useEffect(() => {
+    if (images.length <= 1 || isHoveringRef.current) return
+
+    const timer = setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [currentSlide, images.length])
 
   if (!images || images.length === 0) return null
 
@@ -46,7 +107,7 @@ const Carrusel = ({ images = [], id }) => {
           {images.map((src, idx) => (
             <div
               key={idx}
-              className={`carousel-item ${idx === 0 ? 'active' : ''}`}
+              className={`carousel-item ${idx === currentSlide ? 'active' : ''}`}
             >
               <img src={src} className="d-block w-100" alt={`slide-${idx}`} />
             </div>
@@ -60,6 +121,7 @@ const Carrusel = ({ images = [], id }) => {
               type="button"
               data-bs-target={`#${carouselId}`}
               data-bs-slide="prev"
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)}
             >
               <span className="carousel-control-prev-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Previous</span>
@@ -69,6 +131,7 @@ const Carrusel = ({ images = [], id }) => {
               type="button"
               data-bs-target={`#${carouselId}`}
               data-bs-slide="next"
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % images.length)}
             >
               <span className="carousel-control-next-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Next</span>

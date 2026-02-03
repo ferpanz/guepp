@@ -16,6 +16,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'telefono' || lower === 'teléfono' || lower === 'phone' || lower === 'llamada' || lower === 'tel') return 'Teléfono'
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'Página Web'
     if (lower === 'link') return 'Link'
+    if (lower === 'calificar') return 'Reseña de Google'
     return k.charAt(0).toUpperCase() + k.slice(1)
   }
 
@@ -33,7 +34,9 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'ubicación' || lower === 'ubicacion' || lower === 'maps') return 'geo-alt'
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'globe'
     if (lower === 'email' || lower === 'correo') return 'envelope'
+    if (lower === 'calificar') return 'google'
     return 'box-arrow-up-right'
+    
   }
 
   // Accept #RGB, #RRGGBB and #RRGGBBAA

@@ -34,7 +34,7 @@ const Detail = () => {
   return (
     <div style={{ backgroundColor: colors.fondo, minHeight: '100vh' }}>
       <div className="container-fluid p-5 rounded-3">
-        <Carrusel images={[Img1, Img2, Img3]} />    
+        <Carrusel images={[Img1, Img2, Img3]} />     
       </div>
       <Descripcion datos={datos} colors={colors} />
       

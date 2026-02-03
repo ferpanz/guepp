@@ -8,6 +8,7 @@ import InspeccionRio3Cala1 from "../pages/InspeccionRio3Cala1";
 import CSDecoHome from "../pages/CSDecoHome";
 import Detail from "../pages/Detail";
 import Onix from "../pages/Onix";
+import ColorPony from "../pages/ColorPony";
 
 
 export const router = createBrowserRouter([
@@ -46,5 +47,9 @@ export const router = createBrowserRouter([
     {
         path: "/onix",
         element: <Onix />,
+    },
+    {
+        path: "/colorpony",
+        element: <ColorPony />,
     }
 ]);

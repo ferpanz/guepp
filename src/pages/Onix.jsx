@@ -11,16 +11,17 @@ import Footer from '../components/Footer'
 
 const datos={
   negocio:"Onix Indumentaria",
-  descripcion:"Indumentaria femenina, masculina, niños, lencería y accesorios. Prendas cómodas y a la moda para todas las ocasiones. Encuentra lo último en tendencias y estilos que se adaptan a tu personalidad.",
-  nombre:"Yanina Pereyra",
-  alias:"onix.mp",
-  cvu:"00000031000910714405000"  
+  descripcion:"Indumentaria femenina, masculina, niños, lencería, blanquería,accesorios y regalería. Prendas cómodas y a la moda para toda ocasión. Encontrá todo para vos, tu familia y para regalar en un mismo lugar",
+  nombre:"Yanina Marcela Pereyra",
+  alias:"cloro.giro.gasa.mp",
+  cvu:"0000003100007073012400"  
 }
 
 const redes={
   whatsapp:"https://wa.me/5493571590078",
   instagram:"https://www.instagram.com/onixindumentaria123/",
   facebook:"https://www.facebook.com/share/17jqK1rHrA/",
+  tiktok:"https://www.tiktok.com/@onix.indumentaria0?_r=1&_t=ZM-937VkUMcIhM",
   ubicación:"https://maps.app.goo.gl/3yN6kWXVAP1ivuH78"
 }
 

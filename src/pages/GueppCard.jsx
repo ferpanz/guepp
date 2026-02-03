@@ -23,7 +23,8 @@ const redes={
   whatsapp:"https://wa.me/5493571458866",
   correo:"mailto:ferpanz@gmail.com",
   web:"https://guepp.com.ar/",
-  ubicacion:"https://maps.app.goo.gl/wUhW8Tu1s4cKK6Hu6"
+  ubicacion:"https://maps.app.goo.gl/wUhW8Tu1s4cKK6Hu6",
+ 
 }
 
 const colors={
