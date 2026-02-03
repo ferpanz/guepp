@@ -9,6 +9,8 @@ import CSDecoHome from "../pages/CSDecoHome";
 import Detail from "../pages/Detail";
 import Onix from "../pages/Onix";
 import ColorPony from "../pages/ColorPony";
+import ListteHogar from "../pages/ListteHogar";
+import GreenClover from "../pages/GreenClover";
 
 
 export const router = createBrowserRouter([
@@ -51,5 +53,13 @@ export const router = createBrowserRouter([
     {
         path: "/colorpony",
         element: <ColorPony />,
+    },
+    {
+        path: "/listtehogar",
+        element: <ListteHogar />,
+    },
+    {
+        path: "/greenclover",
+        element: <GreenClover />
     }
 ]);

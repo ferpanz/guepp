@@ -8,6 +8,7 @@ import CardAlias from '../components/CardAlias'
 import BtnRedes from '../components/BtnRedes'
 import Descripcion from '../components/Descripcion'
 import Footer from '../components/Footer'
+import Clientes from '../components/Clientes'
 
 const datos={
   negocio:"GÜEPP!",
@@ -44,6 +45,7 @@ const GueppCard = () => {
       <Descripcion datos={datos} colors={colors} />
       
       <BtnRedes redes={redes} color={colors.botones} />
+      <Clientes />
       <CardAlias datos={datos} colors={colors} />
       <Footer />
     </div>
