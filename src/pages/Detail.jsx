@@ -20,7 +20,8 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/detailjg_rio3",
   whatsapp:"https://wa.me/5493571361641",
-  ubicacion:"https://maps.app.goo.gl/Zohx3eAnH8Q2mEXS6"
+  ubicacion:"https://maps.app.goo.gl/Zohx3eAnH8Q2mEXS6",
+  calificar:'https://www.google.com/search?client=firefox-b-d&hs=QPcU&sca_esv=51db692ab24d98dd&sxsrf=ANbL-n5ZkhiUWJBJMHb4cAkoqdmKMRUQhA:1770141167655&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUsouddnWH9Wc_ERo6UFgasLhy-PjfMTuxbedA1-NkRs6AVrEmr_IFNbrcot_NjvqorP5_SbzLbFhhr7hPovXVxeWZqN&q=DETAIL+JG+Opiniones&sa=X&ved=2ahUKEwiegoDc8b2SAxXaqpUCHWanHGYQ0bkNegQIJBAH&biw=1525&bih=740&dpr=0.9&aic=0#lrd=0x95cd6f000112ef99:0xa2f6d9b39b9d67d2,3,,,,'
 }
 
 const colors={

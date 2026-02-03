@@ -24,6 +24,7 @@ const redes={
   correo:"mailto:ferpanz@gmail.com",
   web:"https://guepp.com.ar/",
   ubicacion:"https://maps.app.goo.gl/wUhW8Tu1s4cKK6Hu6",
+  calificar:"https://g.page/r/Cel3E5iW3sFKEAI/review"
  
 }
 

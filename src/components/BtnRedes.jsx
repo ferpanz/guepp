@@ -16,7 +16,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'telefono' || lower === 'teléfono' || lower === 'phone' || lower === 'llamada' || lower === 'tel') return 'Teléfono'
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'Página Web'
     if (lower === 'link') return 'Link'
-    if (lower === 'calificar') return 'Reseña de Google'
+    if (lower === 'calificar') return 'Reseña en Google'
     return k.charAt(0).toUpperCase() + k.slice(1)
   }
 
