@@ -12,266 +12,293 @@ const clientes = [
   { nombre: "S.E.R. Salón", folder: "SER-salon", card: "/ser-salon" },
 ];
 
-// Clientes.jsx está en src/components, para llegar a src/assets: ../assets
 const logoUrl = (folder) =>
   new URL(`../assets/${folder}/logo.png`, import.meta.url).href;
 
-// Helper: agrupa en arrays de tamaño n
-const chunk = (arr, size) => {
-  const out = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-};
-
-// Helper: define cuántos items por slide según el ancho
-const getItemsPerSlide = () => {
+const getVisibleCount = () => {
   if (typeof window === "undefined") return 4;
   const w = window.innerWidth;
-
-  // Ajuste propuesto:
-  // móvil: 2 (hasta md)
-  // tablet: 3 (md a lg)
-  // desktop: 4 (lg en adelante)
-  if (w < 768) return 2;      // < md
-  if (w < 992) return 3;      // md - < lg
-  return 4;                   // >= lg
+  if (w < 768) return 2;   // móvil
+  if (w < 992) return 3;   // tablet
+  return 4;                // desktop
 };
 
-const Clientes = ({ id }) => {
-  const carouselId = id || `clientes-carousel-${Math.random().toString(36).slice(2, 9)}`;
-  const carouselRef = useRef(null);
+const Clientes = () => {
+  const [visible, setVisible] = useState(getVisibleCount());
+  const [index, setIndex] = useState(0);               // índice de desplazamiento (de a 1)
+  const [transitionOn, setTransitionOn] = useState(true);
+  const [itemW, setItemW] = useState(200);             // ancho calculado por JS
 
-  const [itemsPerSlide, setItemsPerSlide] = useState(getItemsPerSlide());
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const wrapRef = useRef(null);
+  const timerRef = useRef(null);
+  const hoveringRef = useRef(false);
 
-  const autoplayRef = useRef(null);
-  const isHoveringRef = useRef(false);
+  // Duplicamos los primeros "visible" items al final para hacer loop infinito sin salto
+  const trackItems = useMemo(() => {
+    const extra = clientes.slice(0, visible);
+    return [...clientes, ...extra];
+  }, [visible]);
 
-  // Recalcular items por slide en resize
+  // recalcular visible en resize
   useEffect(() => {
-    const onResize = () => setItemsPerSlide(getItemsPerSlide());
+    const onResize = () => setVisible(getVisibleCount());
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Genera slides (cada slide trae 2/3/4 clientes)
-  const slides = useMemo(() => chunk(clientes, itemsPerSlide), [itemsPerSlide]);
-
-  // Si cambia la cantidad de slides (por resize), volvemos al inicio para evitar índices inválidos
+  // recalcular itemW con ResizeObserver para que sea súper estable
   useEffect(() => {
-    setCurrentSlide(0);
-  }, [itemsPerSlide]);
+    if (!wrapRef.current) return;
 
-  // Helpers autoplay (avanza por SLIDES)
-  const stopAutoplay = () => {
-    if (autoplayRef.current) clearTimeout(autoplayRef.current);
-  };
+    const calc = () => {
+      const w = wrapRef.current.clientWidth;
+      if (w > 0) setItemW(w / visible);
+    };
 
-  const scheduleNext = () => {
-    stopAutoplay();
-    if (!isHoveringRef.current && slides.length > 1) {
-      autoplayRef.current = setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 2000);
+    calc();
+
+    let ro;
+    if ("ResizeObserver" in window) {
+      ro = new ResizeObserver(calc);
+      ro.observe(wrapRef.current);
+    } else {
+      // fallback
+      window.addEventListener("resize", calc);
     }
-  };
-
-  // Eventos hover/touch + init bootstrap si existe
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel || slides.length <= 1) return;
-
-    const onMouseEnter = () => {
-      isHoveringRef.current = true;
-      stopAutoplay();
-    };
-    const onMouseLeave = () => {
-      isHoveringRef.current = false;
-      scheduleNext();
-    };
-    const onTouchStart = () => {
-      isHoveringRef.current = true;
-      stopAutoplay();
-    };
-    const onTouchEnd = () => {
-      isHoveringRef.current = false;
-      scheduleNext();
-    };
-
-    carousel.addEventListener("mouseenter", onMouseEnter);
-    carousel.addEventListener("mouseleave", onMouseLeave);
-    carousel.addEventListener("touchstart", onTouchStart, { passive: true });
-    carousel.addEventListener("touchend", onTouchEnd);
-
-    if (typeof window !== "undefined" && window.bootstrap) {
-      try {
-        new window.bootstrap.Carousel(carousel, {
-          interval: false, // tu autoplay lo maneja React
-          wrap: true,
-          keyboard: true,
-          pause: false,
-          touch: true,
-        });
-      } catch (error) {
-        console.error("Error inicializando Bootstrap Carousel:", error);
-      }
-    }
-
-    scheduleNext();
 
     return () => {
-      stopAutoplay();
-      carousel.removeEventListener("mouseenter", onMouseEnter);
-      carousel.removeEventListener("mouseleave", onMouseLeave);
-      carousel.removeEventListener("touchstart", onTouchStart);
-      carousel.removeEventListener("touchend", onTouchEnd);
+      if (ro) ro.disconnect();
+      else window.removeEventListener("resize", calc);
+    };
+  }, [visible]);
+
+  // autoplay: avanza de a 1 logo
+  const stop = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+  };
+
+  const schedule = () => {
+    stop();
+    if (hoveringRef.current) return;
+    if (clientes.length <= visible) return;
+
+    timerRef.current = setTimeout(() => {
+      setIndex((prev) => prev + 1);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    schedule();
+    return stop;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, visible]);
+
+  // manejo hover/touch pausa
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+
+    const onEnter = () => {
+      hoveringRef.current = true;
+      stop();
+    };
+    const onLeave = () => {
+      hoveringRef.current = false;
+      schedule();
+    };
+    const onTouchStart = () => {
+      hoveringRef.current = true;
+      stop();
+    };
+    const onTouchEnd = () => {
+      hoveringRef.current = false;
+      schedule();
+    };
+
+    el.addEventListener("mouseenter", onEnter);
+    el.addEventListener("mouseleave", onLeave);
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      el.removeEventListener("mouseenter", onEnter);
+      el.removeEventListener("mouseleave", onLeave);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [slides.length]);
+  }, [visible]);
 
-  // Autoplay continuo cuando cambia slide
+  // Loop infinito: cuando index llega al final real, resetea sin transición
   useEffect(() => {
-    if (slides.length <= 1 || isHoveringRef.current) return;
-    scheduleNext();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSlide, slides.length]);
+    // cuando llegamos al final de "clientes", estamos viendo items duplicados
+    if (index === clientes.length) {
+      // esperamos a que termine la transición actual y reseteamos "sin animación"
+      const t = setTimeout(() => {
+        setTransitionOn(false);
+        setIndex(0);
 
-  if (!clientes || clientes.length === 0) return null;
+        // reactivar transición en el próximo frame
+        requestAnimationFrame(() => requestAnimationFrame(() => setTransitionOn(true)));
+      }, 520); // debe ser un pelín mayor que la duración de la transición (0.5s)
+      return () => clearTimeout(t);
+    }
+  }, [index]);
+
+  const next = () => setIndex((prev) => prev + 1);
+
+  const prev = () => {
+    // para prev “infinito” sin complicarse: si estamos en 0, saltamos al final sin transición
+    if (index === 0) {
+      setTransitionOn(false);
+      setIndex(clientes.length - 1);
+      requestAnimationFrame(() => requestAnimationFrame(() => setTransitionOn(true)));
+      return;
+    }
+    setIndex((prev) => prev - 1);
+  };
+
+  const translateX = -(index * itemW);
 
   return (
     <section className="container py-4">
-      <h2 className="mb-3 text-center fw-bolder">Nuestros clientes</h2>
+      <h2 className="mb-3 text-center fw-bold text-bg-info p-3 rounded-3">Nuestros clientes</h2>
 
-      <div className="carrusel-responsive">
-        <style>{`
-          .carrusel-responsive{ width:100%; max-width:720px; margin:0 auto; }
-          @media (min-width: 992px){ .carrusel-responsive{ max-width:920px; } }
+      <style>{`
+        .clientes-slider {
+          width: 100%;
+          max-width: 920px;
+          margin: 0 auto;
+          position: relative;
+        }
 
-          .cliente-grid{
-            display:grid;
-            gap: .75rem;
-            align-items: stretch;
-          }
+        .slider-viewport {
+          overflow: hidden;
+          border-radius: 16px;
+        }
 
-          /* grid responsive:
-            - móvil: 2 columnas
-            - md: 3 columnas
-            - lg+: 4 columnas
-          */
-          .cols-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-          .cols-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
-          .cols-4{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .slider-track {
+          display: flex;
+          will-change: transform;
+        }
 
-          .cliente-tile{
-            background: #fff;
-            border-radius: .75rem;
-            padding: .75rem;
-            height: 100%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            box-shadow: 0 .25rem .75rem rgba(0,0,0,.06);
-            transition: transform .15s ease, box-shadow .15s ease;
-          }
-          .cliente-tile:hover{
-            transform: translateY(-2px);
-            box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.10);
-          }
+        .slider-track.transition {
+          transition: transform 0.5s ease;
+        }
 
-          .cliente-link{ text-decoration:none; display:block; height:100%; }
+        .cliente-item {
+          flex: 0 0 auto;
+          padding: .5rem;
+        }
 
-          .cliente-logo{
-            width:100%;
-            height: 120px; /* altura fija para que queden parejos */
-            object-fit: contain;
-          }
+        .cliente-tile {
+          background: #fff;
+          border-radius: 14px;
+          padding: .75rem;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: .5rem;
+          text-align: center;
+          box-shadow: 0 .25rem .75rem rgba(0,0,0,.06);
+          transition: transform .15s ease, box-shadow .15s ease;
+        }
 
-          @media (min-width: 768px){
-            .cliente-logo{ height: 140px; }
-          }
+        .cliente-tile:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.10);
+        }
 
-          .cliente-nombre{
-            margin-top: .5rem;
-            font-weight: 600;
-            color:#212529;
-            font-size: .95rem;
-          }
+        .cliente-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        }
 
-          /* Que el carrusel no haga “saltos” por alturas distintas */
-          .carousel-item{ padding: .25rem; }
-        `}</style>
+        .cliente-logo {
+          width: 100%;
+          height: 120px;
+          object-fit: contain;
+        }
 
-        <div
-          id={carouselId}
-          ref={carouselRef}
-          className="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div className="carousel-inner">
-            {slides.map((grupo, idx) => {
-              const gridClass =
-                itemsPerSlide === 2 ? "cols-2" : itemsPerSlide === 3 ? "cols-3" : "cols-4";
+        @media (min-width: 768px) {
+          .cliente-logo { height: 140px; }
+        }
 
-              return (
-                <div
-                  key={idx}
-                  className={`carousel-item ${idx === currentSlide ? "active" : ""}`}
-                >
-                  <div className={`cliente-grid ${gridClass}`}>
-                    {grupo.map((c) => (
-                      <Link
-                        key={c.card}
-                        to={c.card}
-                        className="cliente-link"
-                        aria-label={`Ir a ${c.nombre}`}
-                      >
-                        <div className="cliente-tile">
-                          <img
-                            src={logoUrl(c.folder)}
-                            alt={`Logo ${c.nombre}`}
-                            className="cliente-logo"
-                            loading="lazy"
-                          />
-                          
-                        </div>
-                      </Link>
-                    ))}
+        .cliente-nombre {
+          font-weight: 600;
+          color: #212529;
+          font-size: .95rem;
+        }
+
+        /* Botones (reutilizamos estilo bootstrap pero custom posicion) */
+        .nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 2;
+          width: 42px;
+          height: 42px;
+          border: none;
+          border-radius: 999px;
+          background: rgba(0,0,0,.45);
+          color: #fff;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          cursor:pointer;
+        }
+        .nav-btn:hover { background: rgba(0,0,0,.6); }
+        .nav-prev { left: 10px; }
+        .nav-next { right: 10px; }
+
+        .nav-icon {
+          width: 18px;
+          height: 18px;
+          border-right: 3px solid #fff;
+          border-bottom: 3px solid #fff;
+          transform: rotate(135deg);
+        }
+        .nav-next .nav-icon { transform: rotate(-45deg); }
+      `}</style>
+
+      <div className="clientes-slider" ref={wrapRef}>
+        <button className="nav-btn nav-prev" onClick={prev} aria-label="Anterior">
+          <span className="nav-icon" />
+        </button>
+
+        <div className="slider-viewport">
+          <div
+            className={`slider-track ${transitionOn ? "transition" : ""}`}
+            style={{ transform: `translateX(${translateX}px)` }}
+          >
+            {trackItems.map((c, i) => (
+              <div
+                className="cliente-item"
+                key={`${c.card}-${i}`}
+                style={{ width: `${itemW}px` }}
+              >
+                <Link to={c.card} className="cliente-link" aria-label={`Ir a ${c.nombre}`}>
+                  <div className="cliente-tile">
+                    <img
+                      src={logoUrl(c.folder)}
+                      alt={`Logo ${c.nombre}`}
+                      className="cliente-logo"
+                      loading="lazy"
+                    />
+                    
                   </div>
-                </div>
-              );
-            })}
+                </Link>
+              </div>
+            ))}
           </div>
-
-          {slides.length > 1 && (
-            <>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target={`#${carouselId}`}
-                data-bs-slide="prev"
-                onClick={() =>
-                  setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-                }
-              >
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target={`#${carouselId}`}
-                data-bs-slide="next"
-                onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-              >
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-              </button>
-            </>
-          )}
         </div>
+
+        <button className="nav-btn nav-next" onClick={next} aria-label="Siguiente">
+          <span className="nav-icon" />
+        </button>
       </div>
     </section>
   );
