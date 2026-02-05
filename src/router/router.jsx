@@ -11,6 +11,7 @@ import Onix from "../pages/Onix";
 import ColorPony from "../pages/ColorPony";
 import ListteHogar from "../pages/ListteHogar";
 import GreenClover from "../pages/GreenClover";
+import FarmaciasPonte from "../pages/FarmaciasPonte";
 
 
 export const router = createBrowserRouter([
@@ -61,5 +62,9 @@ export const router = createBrowserRouter([
     {
         path: "/greenclover",
         element: <GreenClover />
+    },
+    {
+        path: "/farmaciasponte",
+        element: <FarmaciasPonte />
     }
 ]);

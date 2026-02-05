@@ -162,7 +162,7 @@ const Clientes = () => {
 
   return (
     <section className="container py-4">
-      <h2 className="mb-3 text-center fw-bold text-bg-info p-3 rounded-3">Nuestros clientes</h2>
+      <h2 className="mb-3 text-center fw-bold bg-marron p-3 rounded-3">Nuestros clientes</h2>
 
       <style>{`
         .clientes-slider {

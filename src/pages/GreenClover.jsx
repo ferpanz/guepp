@@ -29,8 +29,8 @@ const redes={
 }
 
 const colors={
-  fondo:"#40894c",
-  botones:"#001b11",
+  fondo:"#377642",
+  botones:"#013421",
   cardbody:"#d1c5c0ff",
   text:"#201d1e"
 }

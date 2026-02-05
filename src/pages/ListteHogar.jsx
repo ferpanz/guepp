@@ -20,8 +20,8 @@ const datos={
 
 const redes={
   instagram:"https://www.instagram.com/listtehogar/",
-  whatsapp:"https://wa.me/54935714632527",
-  correo:"mailto:info@listte.com.ar",
+  whatsapp:"https://wa.me/5493571632527",
+  correo:"mailto:listtehogar@fibertel.com.ar",
   web:"https://listte.com.ar/",
   ubicacion:"https://maps.app.goo.gl/adjUY1zddkErCYCD8",
   calificar:"https://www.google.com/search?client=firefox-b-d&hs=j8w9&sca_esv=7da175bd9b925cd1&sxsrf=ANbL-n6CV1YsYhcMVEkn8FUlyDjXXg6JrA:1770156096233&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORfu3DTsCGu_ngsW62ispG8Q_pozlv3V9QbkTVSrSbWKExBBgKfScYaCt7DobxE3Z8B-8fkCdG3BgODsoi3Wu6RYCgqC&q=Listte+Hogar+Opiniones&sa=X&ved=2ahUKEwiViMCqqb6SAxXtrZUCHdi9N_oQ0bkNegQIIRAF&biw=1525&bih=740&dpr=0.9&aic=0#lrd=0x95cd6f49e83ac053:0xea8710ff00dc033f,3,,,,"

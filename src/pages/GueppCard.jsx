@@ -20,7 +20,6 @@ const datos={
 
 const redes={
   instagram:"https://www.instagram.com/guepp_desarrolloweb/",
-  tiktok:"https://www.tiktok.com/@fernanbarberon",
   whatsapp:"https://wa.me/5493571458866",
   correo:"mailto:ferpanz@gmail.com",
   web:"https://guepp.com.ar/",
@@ -46,7 +45,6 @@ const GueppCard = () => {
       
       <BtnRedes redes={redes} color={colors.botones} />
       <Clientes />
-      <CardAlias datos={datos} colors={colors} />
       <Footer />
     </div>
   )
