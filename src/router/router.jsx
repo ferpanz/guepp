@@ -12,6 +12,7 @@ import ColorPony from "../pages/ColorPony";
 import ListteHogar from "../pages/ListteHogar";
 import GreenClover from "../pages/GreenClover";
 import FarmaciasPonte from "../pages/FarmaciasPonte";
+import GlaciarCordobes from "../pages/GlaciarCordobes";
 
 
 export const router = createBrowserRouter([
@@ -66,5 +67,9 @@ export const router = createBrowserRouter([
     {
         path: "/farmaciasponte",
         element: <FarmaciasPonte />
+    },
+    {
+        path: "/glaciar-cordobes",
+        element: <GlaciarCordobes />    
     }
 ]);
