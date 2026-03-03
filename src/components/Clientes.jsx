@@ -10,6 +10,7 @@ const clientes = [
   { nombre: "Yamil Gómez", folder: "yamilgomez", card: "/yamilgomez" },
   { nombre: "Inspección Río 3 Cala 1", folder: "inspeccionrio3cala1", card: "/inspeccionrio3cala1" },
   { nombre: "S.E.R. Salón", folder: "SER-salon", card: "/ser-salon" },
+  { nombre: "Glaciar Cordobés", folder: "glaciar-cordobes", card: "/glaciar-cordobes" },
 ];
 
 const logoUrl = (folder) =>
