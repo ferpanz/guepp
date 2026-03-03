@@ -13,6 +13,7 @@ import ListteHogar from "../pages/ListteHogar";
 import GreenClover from "../pages/GreenClover";
 import FarmaciasPonte from "../pages/FarmaciasPonte";
 import GlaciarCordobes from "../pages/GlaciarCordobes";
+import Cecisa from "../pages/Cecisa";
 
 
 export const router = createBrowserRouter([
@@ -71,5 +72,9 @@ export const router = createBrowserRouter([
     {
         path: "/glaciar-cordobes",
         element: <GlaciarCordobes />    
+    },
+    {
+        path: "/cecisa",
+        element: <Cecisa />
     }
 ]);
