@@ -17,6 +17,13 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'Página Web'
     if (lower === 'link') return 'Link'
     if (lower === 'calificar') return 'Reseña en Google'
+    if (lower === 'cartabebidas') return 'Nuestra carta'
+    if (lower === 'cartamenu') return 'Nuestro menú'
+    if (lower === 'eventos') return 'Próximos eventos'
+    if (lower === 'barra movil' || lower === 'barramovil') return 'Barra móvil'
+    if (lower === 'clubbeneficios' || lower === 'beneficios') return 'Club de Beneficios'
+    if (lower === 'comercial') return 'El Comercial'
+    if (lower === 'folleto') return 'Folleto'
     return k.charAt(0).toUpperCase() + k.slice(1)
   }
 
@@ -35,6 +42,13 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'pagina' || lower === 'página' || lower === 'pagina web' || lower === 'página web' || lower === 'web' || lower === 'website' || lower === 'sitio' || lower === 'sitio web') return 'globe'
     if (lower === 'email' || lower === 'correo') return 'envelope'
     if (lower === 'calificar') return 'google'
+    if (lower === 'cartabebidas') return 'cup-straw'
+    if (lower === 'cartamenu') return 'book'
+    if (lower === 'eventos') return 'megaphone'
+    if (lower === 'barra movil' || lower === 'barramovil') return 'truck'
+    if (lower === 'clubbeneficios' || lower === 'beneficios') return 'credit-card'
+    if (lower === 'comercial') return 'newspaper'
+    if (lower === 'folleto') return 'file-earmark-text'
     return 'box-arrow-up-right'
     
   }

@@ -19,10 +19,11 @@ const datos={
 }
 
 const redes={
+  cartabebidas:"https://drive.google.com/drive/u/0/folders/139oMlX25az2d6Kfqj1v2Pm06t8zHIQ_2",
   instagram:"https://www.instagram.com/greenclover.3/",
   whatsapp:"https://wa.me/5493571563011",
-  correo:"mailto:ferpanz@gmail.com",
-  carta:"https://drive.google.com/drive/u/0/folders/139oMlX25az2d6Kfqj1v2Pm06t8zHIQ_2",
+  eventos:"https://www.instagram.com/channel/Abb-UesCcSY4yGTL/",
+  barramovil:"https://drive.google.com/drive/folders/1guRVyg-aDqCm4QOA41iQjtYWNKgSMoXm?usp=drive_link",
   ubicacion:"https://maps.app.goo.gl/GBJBra9hZms8cmFa8",
   calificar:"https://www.google.com/search?client=firefox-b-d&hs=u8w9&sca_esv=7da175bd9b925cd1&sxsrf=ANbL-n6gr-mHhj78MrrYGOuTj8xAF9tCog:1770156754724&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOWZcJR707uuFLMYrBX-M-_WoYtANy-4uEjy7hJHZpedpeBpFurjI2X5ZKlS0VrDalk-D_GXy6SSdcrEjRYF_7Ie80aCp&q=Green+clover+Opiniones&sa=X&ved=2ahUKEwiBhr_kq76SAxX4qJUCHfQyFk4Q0bkNegQIIRAF&biw=1525&bih=740&dpr=0.9&aic=0#lrd=0x95cd6f54cc33f881:0xce4f93ffa6d5cde9,3,,,,"
  

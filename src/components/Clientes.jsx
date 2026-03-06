@@ -11,6 +11,8 @@ const clientes = [
   { nombre: "Inspección Río 3 Cala 1", folder: "inspeccionrio3cala1", card: "/inspeccionrio3cala1" },
   { nombre: "S.E.R. Salón", folder: "SER-salon", card: "/ser-salon" },
   { nombre: "Glaciar Cordobés", folder: "glaciar-cordobes", card: "/glaciar-cordobes" },
+  { nombre: "Green Clover", folder: "greenclover", card: "/greenclover" },
+  { nombre: "CECISA", folder: "cecisa", card: "/cecisa" },
 ];
 
 const logoUrl = (folder) =>
