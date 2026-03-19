@@ -14,6 +14,7 @@ import GreenClover from "../pages/GreenClover";
 import FarmaciasPonte from "../pages/FarmaciasPonte";
 import GlaciarCordobes from "../pages/GlaciarCordobes";
 import Cecisa from "../pages/Cecisa";
+import CongRio from "../pages/CongRio";
 
 
 export const router = createBrowserRouter([
@@ -76,5 +77,9 @@ export const router = createBrowserRouter([
     {
         path: "/cecisa",
         element: <Cecisa />
+    },
+    {
+        path: "/cong-rio",
+        element: <CongRio />
     }
 ]);

@@ -10,8 +10,8 @@ import Descripcion from '../components/Descripcion'
 import Footer from '../components/Footer'
 
 const datos={
-  negocio:"Inspección Regional Río Tercero / Calamuchita I",
-  descripcion:"Inspección de escuelas secundarias orientadas de los departamentos Tercero Arriba y Calamuchita. Brindamos apoyo y supervisión a las instituciones educativas para garantizar una educación de calidad.",
+  negocio:"Inspección Secundaria Orientadas Región 3B-5B",
+  descripcion:"Inspección de escuelas secundarias orientadas del departamento Tercero Arriba y Calamuchita Sur. Brindamos apoyo y supervisión a las instituciones educativas para garantizar una educación de calidad.",
   nombre:"",
   alias:"",
   cvu:""  
@@ -20,7 +20,7 @@ const datos={
 const redes={
   instagram:"https://www.instagram.com/inspeccionsecundaria.rio3cala1/",
   telefono:"tel:+543571410212",
-  correo:"inspeccionsecundaria.rio3cala1@me.cba.gov.ar",
+  correo:"mailto:inspeccionsecorientada.region3b-5b@me.cba.gov.ar",
   ubicacion:"https://maps.app.goo.gl/Bkhkt4t3gw5LXaUn9"
 }
 

@@ -4,11 +4,9 @@ import Img2 from '../assets/listtehogar/logo.png'
 import Img3 from '../assets/listtehogar/logo.png'
 
 import Carrusel from '../subcomponents/Carrusel'
-import CardAlias from '../components/CardAlias'
 import BtnRedes from '../components/BtnRedes'
 import Descripcion from '../components/Descripcion'
 import Footer from '../components/Footer'
-import Clientes from '../components/Clientes'
 
 const datos={
   negocio:"Listte Hogar",
