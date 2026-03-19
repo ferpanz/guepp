@@ -13,6 +13,7 @@ const clientes = [
   { nombre: "Glaciar Cordobés", folder: "glaciar-cordobes", card: "/glaciar-cordobes" },
   { nombre: "Green Clover", folder: "greenclover", card: "/greenclover" },
   { nombre: "CECISA", folder: "cecisa", card: "/cecisa" },
+  { nombre: "Cong-Río", folder: "cong-rio", card: "/cong-rio" },
 ];
 
 const logoUrl = (folder) =>
@@ -268,9 +269,7 @@ const Clientes = () => {
       `}</style>
 
       <div className="clientes-slider" ref={wrapRef}>
-        <button className="nav-btn nav-prev" onClick={prev} aria-label="Anterior">
-          <span className="nav-icon" />
-        </button>
+        
 
         <div className="slider-viewport">
           <div
@@ -299,9 +298,7 @@ const Clientes = () => {
           </div>
         </div>
 
-        <button className="nav-btn nav-next" onClick={next} aria-label="Siguiente">
-          <span className="nav-icon" />
-        </button>
+        
       </div>
     </section>
   );

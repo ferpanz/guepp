@@ -63,24 +63,24 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     // If explicit hex provided in colorMap for this key, use inline style
     if (mapped && isHex(mapped)) {
       const style = { ...(inlineFromMap || {}), background: mapped, border: 'none', color: '#fff' }
-      return { className: 'btn', style }
+      return { className: 'btn btn-lg', style }
     }
 
     // If mapped looks like a bootstrap/full class, use it
     if (mapped && (mapped.startsWith('btn-') || mapped.includes(' '))) {
-      return { className: `btn ${mapped}`, style: inlineFromMap }
+      return { className: `btn ${mapped} btn-lg`, style: inlineFromMap }
     }
 
     // If mapped is a bootstrap color name (e.g., 'primary'), use btn-{mapped}
-    if (mapped) return { className: `btn btn-${mapped}`, style: inlineFromMap }
+    if (mapped) return { className: `btn btn-${mapped} btn-lg`, style: inlineFromMap }
 
     // Fallback to page-level color
     if (isHex(color)) {
       const style = { ...(inlineFromMap || {}), background: color, border: 'none', color: '#fff' }
-      return { className: 'btn shadow mb-2', style }
+      return { className: 'btn btn-lg shadow mb-2', style }
     }
 
-    return { className: `btn btn-${color}`, style: inlineFromMap }
+    return { className: `btn btn-${color} btn-lg`, style: inlineFromMap }
   }
 
   return (
