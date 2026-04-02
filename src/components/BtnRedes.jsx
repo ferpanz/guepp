@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-
-const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} }) => {
+const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {}, onClickMap = {} }) => {
   const entries = Object.entries(redes || {})
   if (entries.length === 0) return null
 
@@ -24,6 +24,8 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'clubbeneficios' || lower === 'beneficios') return 'Club de Beneficios'
     if (lower === 'comercial') return 'El Comercial'
     if (lower === 'folleto') return 'Folleto'
+    if (lower === 'zona') return 'Zona de cobertura'
+    if (lower === 'escuelas') return 'Escuelas'
     return k.charAt(0).toUpperCase() + k.slice(1)
   }
 
@@ -49,6 +51,8 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
     if (lower === 'clubbeneficios' || lower === 'beneficios') return 'credit-card'
     if (lower === 'comercial') return 'newspaper'
     if (lower === 'folleto') return 'file-earmark-text'
+    if (lower === 'escuelas') return 'book'
+    if (lower === 'zona') return 'geo-alt'
     return 'box-arrow-up-right'
     
   }
@@ -94,6 +98,19 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {} 
           // Si la clave es correo/email, asegurar el prefijo mailto:
           if ((lowerKey === 'correo' || lowerKey === 'email') && typeof url === 'string') {
             href = url.startsWith('mailto:') ? url : `mailto:${url}`
+          }
+          if (onClickMap[key]) {
+            return (
+              <button
+                key={key}
+                onClick={onClickMap[key]}
+                className={className}
+                style={style}
+              >
+                <i className={`bi bi-${icon} me-2`} aria-hidden="true" />
+                {labelFromKey(key)}
+              </button>
+            )
           }
           return (
             <a

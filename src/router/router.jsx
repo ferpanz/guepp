@@ -5,6 +5,7 @@ import YamilGomez from "../pages/YamilGomez";
 import SerSalon from "../pages/SerSalon";
 import GueppCard from "../pages/GueppCard";
 import InspeccionRio3Cala1 from "../pages/InspeccionRio3Cala1";
+import Escuelas from "../pages/Escuelas";
 import CSDecoHome from "../pages/CSDecoHome";
 import Detail from "../pages/Detail";
 import Onix from "../pages/Onix";
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
     {
         path: "/inspeccionrio3cala1",
         element: <InspeccionRio3Cala1 />,
+    },
+    {
+        path: "/escuelas",
+        element: <Escuelas />,
     },
     {
         path: "/cs-decohome",

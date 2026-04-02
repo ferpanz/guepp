@@ -21,6 +21,7 @@ const redes={
   instagram:"https://www.instagram.com/inspeccionsecundaria.rio3cala1/",
   telefono:"tel:+543571410212",
   correo:"mailto:inspeccionsecorientada.region3b-5b@me.cba.gov.ar",
+  escuelas: "/escuelas",
   ubicacion:"https://maps.app.goo.gl/Bkhkt4t3gw5LXaUn9"
 }
 
@@ -38,7 +39,6 @@ const InspeccionRio3Cala1 = () => {
         <Carrusel images={[Img1, Img2, Img3]} />    
       </div>
       <Descripcion datos={datos} colors={colors} />
-      
       <BtnRedes redes={redes} color={colors.botones} />
       <Footer />
     </div>

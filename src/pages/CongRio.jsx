@@ -21,9 +21,10 @@ const datos={
 
 const redes={
   instagram:"https://www.instagram.com/cong.riosa/",
-  catálogo: "https://drive.google.com/drive/folders/16wW8hGVbJwofASLIkOieKDLKJcDC2hvm?usp=drive_link",
   whatsapp:"https://wa.me/5493571526045",
   teléfono:"tel:+543571601862",
+  catálogo: "https://drive.google.com/drive/folders/16wW8hGVbJwofASLIkOieKDLKJcDC2hvm?usp=drive_link",
+  zona: "https://drive.google.com/file/d/1rS9XWWtVZGkiQmdag3-TLQIJNeUxHT87/view?usp=drivesdk",
   correo:"mailto:cong.riosa@gmail.com",
  
 }
