@@ -57,15 +57,15 @@ const Escuelas = () => {
 
   if (!isLoggedIn) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: colors.fondo, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div className='p-3 mt-5' style={{display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div className="modal-content" style={{ width: '100%', maxWidth: '420px' }}>
           <div className="modal-header">
-            <h5 className="modal-title text-black">Iniciar Sesión</h5>
+            <h5 className="modal-title text-black mb-3">Iniciar Sesión</h5>
           </div>
           <div className="modal-body">
             <form onSubmit={handleLogin}>
               <div className="mb-3">
-                <label htmlFor="username" className="form-label text-black">Usuario</label>
+                <label htmlFor="username" className="form-label text-black">Escuela</label>
                 <input
                   type="text"
                   className="form-control"

@@ -25,7 +25,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {},
     if (lower === 'comercial') return 'El Comercial'
     if (lower === 'folleto') return 'Folleto'
     if (lower === 'zona') return 'Zona de cobertura'
-    if (lower === 'escuelas') return 'Escuelas'
+    if (lower === 'escuelas') return 'Acceso escuelas'
     return k.charAt(0).toUpperCase() + k.slice(1)
   }
 
@@ -51,7 +51,7 @@ const BtnRedes = ({ redes = {}, color = 'primary', colorMap = {}, styleMap = {},
     if (lower === 'clubbeneficios' || lower === 'beneficios') return 'credit-card'
     if (lower === 'comercial') return 'newspaper'
     if (lower === 'folleto') return 'file-earmark-text'
-    if (lower === 'escuelas') return 'book'
+    if (lower === 'escuelas') return 'folder2-open'
     if (lower === 'zona') return 'geo-alt'
     return 'box-arrow-up-right'
     
